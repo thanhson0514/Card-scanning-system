@@ -1,6 +1,6 @@
 # Arduino connect database basic
 
-## **_Yêu Cầu:_**
+## **_Requirement:_**
 
 + PostgreSQL
 + Python 3.@
