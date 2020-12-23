@@ -8,6 +8,7 @@
 + RFID-RC522
 + Led
 + Resistor - 220
++ Arduino IDE
 
 ## Setup
 
