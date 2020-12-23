@@ -4,7 +4,9 @@ import time
 from info import database
 from info import info
 
-ser = serial.Serial('COM3', 9600, timeout=0)
+device = 'COM3'
+
+ser = serial.Serial(device, 9600, timeout=0)
 time.sleep(3)
 
 print('Connecting...')
