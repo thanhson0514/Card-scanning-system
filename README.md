@@ -12,6 +12,8 @@
 
 ## Setup
 
+open Arduino IDE -> open file "Blink.ino" in folder "Blink" -> Update for arduino
+
 set name "database" is name your database
 
 set "info.password" variable is password your postgreSQL
