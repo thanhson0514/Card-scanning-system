@@ -1,6 +1,6 @@
 # Arduino connect database basic
 
-## **_Yêu Cầu:_**
+## **_Requirement:_**
 
 + PostgreSQL
 + Python 3.^
@@ -8,10 +8,13 @@
 + RFID-RC522
 + Led
 + Resistor - 220
++ Arduino IDE
 
 ## Setup
 
-set name `database` is name your database
+open Arduino IDE -> open file "Blink.ino" in folder "Blink" -> Update for arduino
+
+set name "database" is name your database
 
 set `info.password` variable is password your postgreSQL
 
