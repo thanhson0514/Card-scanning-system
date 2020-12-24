@@ -12,15 +12,11 @@
 
 ## Setup
 
-open Arduino IDE -> open file "Blink.ino" in folder "Blink" -> Update for arduino
+Open Arduino IDE -> open file "Blink.ino" in folder "Blink" -> Update for arduino
 
-set name "database" is name your database
+Set `constructor` variable to `GLOBAL` or something.
 
-set `info.password` variable is password your postgreSQL
-
-set "person" variable in `SELECT * FROM person WHERE id=%s` is name your table
-
-set name `device` variable (default: Arduino Uno R3 CH340 - COM3)
+Set name `device` variable (default: Arduino Uno R3 CH340 - COM3)
 
 Run:
 ```bash

@@ -1,24 +1,24 @@
 import psycopg2
 import serial
 import time
-from info import database
-from info import info
+from public import public_server
+from info import local_database
 
 device = 'COM3'
+constructor = 'LOCAL'
+conn = None
 
 ser = serial.Serial(device, 9600, timeout=0)
 time.sleep(3)
 
-print('Connecting...')
-conn = None
+print('Connecting Arduino...')
 
 try:
-    conn = psycopg2.connect(
-        host="localhost",
-        database="rfid",
-        user="postgres",
-        password=info.password
-    )
+    if constructor == "LOCAL":
+        conn = local_database.connect_database()
+    else:
+        conn = public_server.connect_database()
+
     while 1:
         conv_data = []
         data = b''
@@ -33,7 +33,7 @@ try:
 
         conv_data = '_'.join(conv_data)[1:].strip()
 
-        commands = "SELECT * FROM person WHERE id=%s"
+        commands = "SELECT * FROM rfid WHERE id=%s"
 
         cur = conn.cursor()
         cur.execute(commands,(conv_data,))
