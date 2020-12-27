@@ -1,9 +1,9 @@
 import time
 from functions import Device
 
-device = 'COM3'
+port = 'COM3'
 
-arduino_Uno = Device.Arduino()
+arduino_Uno = Device.Arduino(port)
 ser = arduino_Uno.run()
 mfrc522 = Device.RFID_MC522(ser)
 

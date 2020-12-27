@@ -33,8 +33,8 @@ function socketEmit() {
 function submit() {
   formBox.addEventListener("submit", async (e) => {
     e.preventDefault();
+    
     const name = inputName.value;
-    console.log(name, id);
     const res = await fetch("http://localhost:3000/api/admin/register", {
       method: "POST",
       headers: {
