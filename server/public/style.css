@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-box {
+    padding: 1.2rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.message-box div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.message-box .title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid;
+}
+
+.message-box p {
+    padding: 8px;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.3rem;
+    border: 1px solid;
+    border-radius: 1rem;
+}
+
+.container-form h1 {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #222;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+.form-box .input_name,
+.form-box .input_card_id {
+    outline: none;
+    padding: .5rem;
+    margin: .5rem;
+    width: 100%;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.form-box .btn_register {
+    margin: 1rem 0;
+    width: 100%;
+    outline: none;
+    border: 0;
+    background-color: #d33f9f;
+    padding: .75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.form-box .btn_register:hover {
+    opacity: .7;
+}
