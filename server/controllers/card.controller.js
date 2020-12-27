@@ -1,11 +1,14 @@
 const Card = require("../models/Card.model");
 
-exports.checkCard = async (req, res) => {
-  const { card_id } = req.body;
+exports.checkCard = async (req, res, next) => {
   const io = req.app.locals.io;
-
+  if (!req.id) {
+    return res.status(403).json({
+      success: false
+    })
+  }
   try {
-    const card = await Card.find({ card_id }, {
+    const card = await Card.find(req.card_id, {
       card_id: 0,
     });
 
@@ -16,13 +19,12 @@ exports.checkCard = async (req, res) => {
       success: true,
     });
 
-    req.id = card_id;
-
-    return res.status(200).json({
+    res.status(200).json({
       username: card.name,
       message: "ID card is valid!",
       success: true,
     });
+
   } catch (error) {
     console.log(error);
     return res.status(401).json({
@@ -33,12 +35,14 @@ exports.checkCard = async (req, res) => {
 };
 
 exports.getCard = async (req, res) => {
+  const { card_id } = req.body;
   try {
-    const card = await Card.find(req.id);
+    const card = await Card.find({card_id: card_id}, {card_id: 0});
+    const [{ name }] = card;
 
     res.status(200).json({
       message: 'Get info user',
-      name: card.name
+      name: name
     });
 
   } catch (error) {

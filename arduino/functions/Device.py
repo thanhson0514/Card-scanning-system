@@ -45,7 +45,7 @@ class RFID_MC522():
         res_data = res.json()
 
         if res_data['success']:
-            user = requests.get('http://localhost:3000/api/card')
+            user = requests.get('http://localhost:3000/api/card', data=query)
             user_data = user.json()
             print(user_data)
 

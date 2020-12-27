@@ -3,7 +3,7 @@ const express = require("express");
 const Router = express.Router();
 
 // middlewares
-// const { register } = require("../middlewares/scan_card");
+const { authentication } = require("../middlewares/authentication");
 
 // general
 const { postData, register } = require("../controllers/admin.controller");
@@ -18,7 +18,7 @@ Router
 // Router card
 Router
     .route("/card")
-    .post(checkCard)
+    .post(authentication, checkCard)
     .get(getCard);
 
 // Router admin
