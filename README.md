@@ -1,6 +1,6 @@
 # Arduino connect server
 
->This is project read ID card with RFID-RC522 connected Arduino.
+> This project's purpose is reading ID card using Arduino connecting with RFID.
 The project created is so controlling ID currently of people scanned card.
 The Admin system can create an account for someone who scanned by the device.
 
